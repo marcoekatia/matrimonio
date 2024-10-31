@@ -1,0 +1,27 @@
+---
+import { FORM_LINK } from "../config/consts";
+import corniceFioriImg from "../img/cornice-fiori.jpg";
+import Section from "../layouts/Section.astro";
+import Button from "./Button.astro";
+import SectionTitle from "./SectionTitle.astro";
+---
+
+<Section id="adhesion" bgColor="bg-light-peach">
+  <div class="col-span-4">
+    <img src={corniceFioriImg.src} alt="" />
+  </div>
+  <div class="col-span-8 [&>p]:mb-3">
+    <SectionTitle>Facci sapere se ci sarai</SectionTitle>
+    <p>
+      Se ti interessa essere dei nostri, blocca subito la data nella tua agenda.
+    </p>
+    <p class="mb-8">
+      Puoi confermare la partecipazione compilando un breve form in cui ci
+      fornirai tutte le informazioni che ci servono per organizzare una festa
+      speciale.
+    </p>
+    <Button as="a" href={FORM_LINK} target="_blank"
+      >Conferma la tua prenotazione</Button
+    >
+  </div>
+</Section>

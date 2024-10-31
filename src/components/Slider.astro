@@ -1,0 +1,34 @@
+---
+interface Props {
+	slides: Slide[];
+}
+
+type Slide = {
+  imgSrc: string
+}
+
+const { slides } = Astro.props;
+---
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    {slides.map(slide =>      
+      <div class="swiper-slide">
+        <img
+          alt=""
+          src={slide.imgSrc}
+          class="max-h-[calc(100vh-3.75rem)] h-96 md:h-auto w-full object-center object-cover">
+      </div>
+    )}
+  </div>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script is:inline>new Swiper('.swiper', {
+  autoplay: {
+    delay: 5000,
+  },
+  speed: 3000,
+  loop: true
+})</script>

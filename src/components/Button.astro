@@ -1,0 +1,27 @@
+---
+interface Props {
+  href?: string;
+  as?: "a" | "button";
+  customClass?: string;
+  target?: string;
+}
+
+const { href, as = "button", customClass = "", target = "_self" } = Astro.props;
+const className =
+  "bg-pink-200 hover:bg-pink-300 px-4 py-2 rounded-lg transi transition-colors inline-block text-center";
+---
+
+{
+  as === "button" && (
+    <button class:list={[className, customClass]}>
+      <slot />
+    </button>
+  )
+}
+{
+  as === "a" && (
+    <a href={href} class:list={[className, customClass]} target={target}>
+      <slot />
+    </a>
+  )
+}

@@ -1,0 +1,88 @@
+---
+import menuIcon from "../img/icons/bars-3.svg";
+import Button from "../components/Button.astro";
+import { BASE_PATH, FORM_LINK } from "../config/consts";
+
+interface Props {
+  links: Link[];
+}
+
+type Link = {
+  label: string;
+  href: string;
+  isButton?: boolean;
+};
+
+const { links } = Astro.props;
+const pathname = new URL(Astro.request.url).pathname;
+
+const getLink = (href: string) => {
+  if (href.substring(0, 1) !== "#" || pathname !== BASE_PATH) {
+    return `${BASE_PATH}${href}`;
+  }
+  return href;
+};
+---
+
+<header class="sticky top-0 z-10 bg-white px-5 py-3 drop-shadow-md">
+  <nav class="flex justify-center md:justify-between items-center relative">
+    <a href="/matrimoniomarcoekatia"
+      ><h1 class="font-serif text-3xl">Matrimonio Marco e Katia</h1></a
+    >
+    <ul
+      class="gap-x-6 hidden md:flex md:static absolute bg-white top-8 w-full rounded-lg drop-shadow-md md:drop-shadow-none md:w-auto items-center"
+      id="menu"
+      role="menu"
+      aria-labelledby="menubutton"
+    >
+      {
+        links.map((link) => (
+          <li
+            class={link.isButton ? "flex justify-center pb-1 px-1 md:p-0" : ""}
+          >
+            {link.isButton ? (
+              <Button
+                customClass="w-full"
+                as="a"
+                href={FORM_LINK}
+                target="_blank"
+              >
+                {link.label}
+              </Button>
+            ) : (
+              <a
+                class="px-4 py-2 inline-block w-full md:p-0 text-center hover:underline"
+                href={getLink(link.href)}
+              >
+                {link.label}
+              </a>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+    <button
+      id="menubutton"
+      aria-haspopup="true"
+      aria-controls="menu"
+      class="w-6 md:hidden absolute right-0"
+    >
+      <img src={menuIcon.src} alt="menu icon" />
+    </button>
+  </nav>
+</header>
+
+<script>
+  const menuButton = document.querySelector("#menubutton");
+  const menu = document.querySelector("#menu");
+  const body = document.querySelector("body");
+
+  menuButton?.addEventListener("click", () => menu?.classList.toggle("hidden"));
+  body?.addEventListener("click", (e) => {
+    const t = e.target as HTMLElement;
+    const clickElId = t.parentElement?.getAttribute("id");
+    if (clickElId !== "menubutton") {
+      menu?.classList.add("hidden");
+    }
+  });
+</script>
