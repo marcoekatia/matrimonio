@@ -1,10 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Section from '../layouts/Section.astro';
-import Slider from '../components/Slider.astro';
-import Button from '../components/Button.astro';
-import SectionTitle from '../components/SectionTitle.astro';
-import Photograph from '../components/Photograph.astro';
+import Layout from "../layouts/Layout.astro";
+import Section from "../layouts/Section.astro";
+import Slider from "../components/Slider.astro";
+import Button from "../components/Button.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import Photograph from "../components/Photograph.astro";
 import fediImg from "../img/fedi.jpg";
 import honeyMoonImg from "../img/honey-moon.jpg";
 import honeyMoonLeftImg from "../img/honey-moon-left.jpg";
@@ -20,81 +20,142 @@ import slider5 from "../img/slider/5.jpg";
 import slider6 from "../img/slider/6.jpg";
 import slider7 from "../img/slider/7.jpg";
 import slider8 from "../img/slider/8.jpg";
-import Adesion from '../components/Adesion.astro';
+import Adesion from "../components/Adesion.astro";
 ---
 
 <Layout title="Matrimonio Marco e Katia">
-	<main>
-		<Slider slides={[
-			{imgSrc: slider1.src},
-			{imgSrc: slider2.src},
-			{imgSrc: slider3.src},
-			{imgSrc: slider4.src},
-			{imgSrc: slider5.src},
-			{imgSrc: slider6.src},
-			{imgSrc: slider7.src},
-			{imgSrc: slider8.src},
-		]}/>
-		<Section id="introduction">
-				<div class="col-span-9 [&>p]:mb-3">
-					<SectionTitle>
-						Marco e Katia si sposano, finalmente!
-					</SectionTitle>
-					<p>Eh sì, hai capito bene! E’ arrivato per noi il momento di fare il grande passo e saremo lieti se tu volessi partecipare.</p>
-					<p>In questo sito troverai tutte le informazioni importanti e le spiegazioni sull’evento e su come partecipare.</p>
-				</div>
-				<img src={fediImg.src} class="col-span-3 px-24 md:px-12 pt-4" />
-		</Section>
-		<Adesion />
-		<Section id="time-location">
-			<div class="col-span-8 pt-6 order-2 md:order-1">
-				<SectionTitle>
-					La funzione nella chiesa di San Martino
-				</SectionTitle>
-				<b class="block mb-3">Ore 10:30 - <a class="underline" href="https://www.google.it/maps/place/Chiesa+Parrocchiale+di+San+Martino+Vescovo+-+Pesaro+(citt%C3%A0)/@43.8976383,12.8895736,17z/data=!3m1!4b1!4m6!3m5!1s0x132d1eabe8f7063f:0xb3de8d5e07c58e19!8m2!3d43.8976383!4d12.8921485!16s%2Fg%2F1xtdztt4?entry=ttu"  target="_blank">
-						link alla mappa
-					</a>
-				</b>
-				<div class="relative">
-					<p class="mb-3">Ci sarà possibilità di parcheggiare proprio davanti alla chiesa oppure nelle vie limitrofe.</p>
-					<p>Una volta finita la funzione, gettato il riso (o roba più pesante se vi abbiamo annoiati) e fatte le foto di rito, si passa alla seconda fase: quella divertente!</p>
-					<img src={flowersImg.src} alt="" class="w-48 h-48 absolute -left-20 -bottom-20 -z-10 hidden xl:block">
-				</div>
-			</div>
-			<div class="col-span-4 order-1 md:order-2">
-				<Photograph src={chiesaImg.src} rotationDirection={"negative"} />
-			</div>
-			<div class="col-span-4 order-3">
-				<Photograph src={ristoranteImg.src} rotationDirection={"positive"} />
-			</div>
-			<div class="col-span-8 pt-6 order-4">
-				<SectionTitle>
-					La festa al Perbacco, Country House
-				</SectionTitle>
-				<b class="block mb-3">Orario 13:00 - <a href="https://www.google.it/maps/place/Perbacco+Country+House+Locanda/@43.744366,13.106211,17z/data=!3m1!4b1!4m6!3m5!1s0x132d0c4617aa13f1:0x3e13845d75003667!8m2!3d43.7443661!4d13.1108244!16s%2Fg%2F1tvrf98c?entry=ttu" class="underline" target="_blank">
-						link alla mappa
-					</a>
-				</b>
-				<div class="relative">
-					<p>Se ti interessa sapere come si svolgerà l’evento, ti invito a cliccare qui sotto per maggiori informazioni</p>
-					<img src={flowersImg.src} alt="" class="w-48 h-48 absolute -right-20 -bottom-20 -z-10 scale-x-[-1] hidden xl:block">
-				</div>
-			</div>
-			<div class="col-span-12 flex justify-center pt-12 order-5">
-				<Button as="a" href="/matrimoniomarcoekatia/programma">Vai al programma esteso</Button>
-			</div>
-		</Section>
-		<Section id="present" bgColor='bg-light-yellow relative pb-11 md:pb-10'>
-			<div class="col-span-8 order-2 md:order-1 [&>p]:mb-3">
-				<SectionTitle>Cosa ci piacerebbe</SectionTitle>
-				<p>Il regalo più grande che puoi farci è la tua partecipazione all’evento.</p>
-				<p>Se però hai piacere, puoi contribuire al nostro piccolo sogno, regalandoci quello che per noi sarà il viaggio della vita…</p>
-				<p>Per la nostra luna di miele ci piacerebbe tanto coronare il nostro sogno di visitare il Giappone. Fin da piccoli, il mondo orientale ci affascina con tutte le loro tradizioni e particolarità che vorremmo scoprire direttamente con i nostri occhi (non solo sui libri e nelle serie tv).</p>
-				<p>Se vuoi partecipare al regalo invia una email all'indirizzo <a href="mailto:matrimoniomarcoekatia@gmail.com" class="underline">matrimoniomarcoekatia@gmail.com</a> con oggetto: <b>"Voglio partecipare al regalo"</b> per ricevere con una comunicazione privata tutte le informazioni</p>
-			</div>
-			<img src={honeyMoonImg.src} class="col-span-4 mt-[-2.5rem] md:mt-[-5rem] order-1 md:order-2" />
-			<img src={honeyMoonLeftImg.src} alt="" class="absolute left-0 bottom-0 w-16">
-			<img src={honeyMoonRightImg.src} alt="" class="absolute right-0 bottom-0 w-20">
-		</Section>
-	</main>
+  <main>
+    <Slider
+      slides={[
+        { imgSrc: slider1.src },
+        { imgSrc: slider2.src },
+        { imgSrc: slider3.src },
+        { imgSrc: slider4.src },
+        { imgSrc: slider5.src },
+        { imgSrc: slider6.src },
+        { imgSrc: slider7.src },
+        { imgSrc: slider8.src },
+      ]}
+    />
+    <Section id="introduction">
+      <div class="col-span-9 [&>p]:mb-3">
+        <SectionTitle> Marco e Katia si sposano, finalmente! </SectionTitle>
+        <p>
+          Eh sì, hai capito bene! E’ arrivato per noi il momento di fare il
+          grande passo e saremo lieti se tu volessi partecipare.
+        </p>
+        <p>
+          In questo sito troverai tutte le informazioni importanti e le
+          spiegazioni sull’evento e su come partecipare.
+        </p>
+      </div>
+      <img src={fediImg.src} class="col-span-3 px-24 md:px-12 pt-4" />
+    </Section>
+    <Adesion />
+    <Section id="time-location">
+      <div class="col-span-8 pt-6 order-2 md:order-1">
+        <SectionTitle> La funzione nella chiesa di San Martino </SectionTitle>
+        <b class="block mb-3"
+          >Ore 10:30 - <a
+            class="underline"
+            href="https://www.google.it/maps/place/Chiesa+Parrocchiale+di+San+Martino+Vescovo+-+Pesaro+(citt%C3%A0)/@43.8976383,12.8895736,17z/data=!3m1!4b1!4m6!3m5!1s0x132d1eabe8f7063f:0xb3de8d5e07c58e19!8m2!3d43.8976383!4d12.8921485!16s%2Fg%2F1xtdztt4?entry=ttu"
+            target="_blank"
+          >
+            link alla mappa
+          </a>
+        </b>
+        <div class="relative">
+          <p class="mb-3">
+            Ci sarà possibilità di parcheggiare proprio davanti alla chiesa
+            oppure nelle vie limitrofe.
+          </p>
+          <p>
+            Una volta finita la funzione, gettato il riso (o roba più pesante se
+            vi abbiamo annoiati) e fatte le foto di rito, si passa alla seconda
+            fase: quella divertente!
+          </p>
+          <img
+            src={flowersImg.src}
+            alt=""
+            class="w-48 h-48 absolute -left-20 -bottom-20 -z-10 hidden xl:block"
+          />
+        </div>
+      </div>
+      <div class="col-span-4 order-1 md:order-2">
+        <Photograph src={chiesaImg.src} rotationDirection={"negative"} />
+      </div>
+      <div class="col-span-4 order-3">
+        <Photograph src={ristoranteImg.src} rotationDirection={"positive"} />
+      </div>
+      <div class="col-span-8 pt-6 order-4">
+        <SectionTitle> La festa al Perbacco, Country House </SectionTitle>
+        <b class="block mb-3"
+          >Orario 13:00 - <a
+            href="https://www.google.it/maps/place/Perbacco+Country+House+Locanda/@43.744366,13.106211,17z/data=!3m1!4b1!4m6!3m5!1s0x132d0c4617aa13f1:0x3e13845d75003667!8m2!3d43.7443661!4d13.1108244!16s%2Fg%2F1tvrf98c?entry=ttu"
+            class="underline"
+            target="_blank"
+          >
+            link alla mappa
+          </a>
+        </b>
+        <div class="relative">
+          <p>
+            Se ti interessa sapere come si svolgerà l’evento, ti invito a
+            cliccare qui sotto per maggiori informazioni
+          </p>
+          <img
+            src={flowersImg.src}
+            alt=""
+            class="w-48 h-48 absolute -right-20 -bottom-20 -z-10 scale-x-[-1] hidden xl:block"
+          />
+        </div>
+      </div>
+      <div class="col-span-12 flex justify-center pt-12 order-5">
+        <Button as="a" href="/matrimonio/programma"
+          >Vai al programma esteso</Button
+        >
+      </div>
+    </Section>
+    <Section id="present" bgColor="bg-light-yellow relative pb-11 md:pb-10">
+      <div class="col-span-8 order-2 md:order-1 [&>p]:mb-3">
+        <SectionTitle>Cosa ci piacerebbe</SectionTitle>
+        <p>
+          Il regalo più grande che puoi farci è la tua partecipazione
+          all’evento.
+        </p>
+        <p>
+          Se però hai piacere, puoi contribuire al nostro piccolo sogno,
+          regalandoci quello che per noi sarà il viaggio della vita…
+        </p>
+        <p>
+          Per la nostra luna di miele ci piacerebbe tanto coronare il nostro
+          sogno di visitare il Giappone. Fin da piccoli, il mondo orientale ci
+          affascina con tutte le loro tradizioni e particolarità che vorremmo
+          scoprire direttamente con i nostri occhi (non solo sui libri e nelle
+          serie tv).
+        </p>
+        <p>
+          Se vuoi partecipare al regalo invia una email all'indirizzo <a
+            href="mailto:matrimonio@gmail.com"
+            class="underline">matrimonio@gmail.com</a
+          > con oggetto: <b>"Voglio partecipare al regalo"</b> per ricevere con una
+          comunicazione privata tutte le informazioni
+        </p>
+      </div>
+      <img
+        src={honeyMoonImg.src}
+        class="col-span-4 mt-[-2.5rem] md:mt-[-5rem] order-1 md:order-2"
+      />
+      <img
+        src={honeyMoonLeftImg.src}
+        alt=""
+        class="absolute left-0 bottom-0 w-16"
+      />
+      <img
+        src={honeyMoonRightImg.src}
+        alt=""
+        class="absolute right-0 bottom-0 w-20"
+      />
+    </Section>
+  </main>
 </Layout>

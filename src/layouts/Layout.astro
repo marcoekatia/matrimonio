@@ -1,11 +1,11 @@
 ---
-import '@fontsource/island-moments';
-import '@fontsource-variable/playfair-display';
-import Header from '../components/Header.astro';
+import "@fontsource/island-moments";
+import "@fontsource-variable/playfair-display";
+import Header from "../components/Header.astro";
 import headerLinks from "../config/header.json";
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -13,26 +13,30 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Finalmente Marco e Katia si sposano" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/matrimoniomarcoekatia/favicon.svg" />
-		<title>{title}</title>
-	</head>
-	<body>
-		<Header links={headerLinks}/>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Finalmente Marco e Katia si sposano" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/matrimoniomarcoekatia/favicon.svg"
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header links={headerLinks} />
+    <slot />
+  </body>
 </html>
 
 <style>
-	:global(html) {
-		scroll-behavior: smooth;
-	}
-	@media (prefers-reduced-motion: reduce) {
-		:global(html) {
-			scroll-behavior: auto;
-		}
-	}
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :global(html) {
+      scroll-behavior: auto;
+    }
+  }
 </style>
